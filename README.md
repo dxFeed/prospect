@@ -217,3 +217,8 @@ The following table describes loading process of a property value from flat prop
 If the parser returns `null`, then loading continues as if the flat value was initially _empty_.
 If `useOnEmpty` is true for a default value of a property,
 then for _empty_ flat values loading continues as if the flat value was initially `null`.
+
+## License
+
+Distributed under Mozilla Public License Version 2.0.
+See LICENSE for more information.
