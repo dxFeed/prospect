@@ -1,0 +1,15 @@
+# Gradle
+.gradle
+build
+
+# IDEA
+.idea
+*.iml
+out
+
+# Platform-specific
+# MacOS
+.DS_Store
+
+# Custom development files
+/dev
