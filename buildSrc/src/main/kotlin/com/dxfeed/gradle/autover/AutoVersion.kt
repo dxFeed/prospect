@@ -21,11 +21,6 @@ const val SET_VERSION_TASK = "setVersion"
 fun writeVersion(versionFile: File, newVersion: String) {
     val versionProps = PropertiesConfiguration()
     versionProps.header = """
-            Copyright (C) 2002 - 2021 Devexperts LLC
-            This Source Code Form is subject to the terms of the Mozilla Public
-            License, v. 2.0. If a copy of the MPL was not distributed with this
-            file, You can obtain one at https://mozilla.org/MPL/2.0/.
-
             THIS FILE IS AUTO-GENERATED.
             Use `$SET_VERSION_TASK` task to change the version.
         """.trimIndent()
