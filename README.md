@@ -5,6 +5,10 @@
   file, You can obtain one at https://mozilla.org/MPL/2.0/.
 -->
 
+[![Made by dxFeed](https://img.shields.io/badge/Made_by-dxFeed-e6411d)](https://www.dxfeed.com/)
+[![License: MPL-2.0](https://img.shields.io/badge/License-MPL--2.0-blue)](./LICENSE)
+[![Gradle build](https://github.com/dxFeed/prospect/actions/workflows/gradle.yml/badge.svg)](https://github.com/dxFeed/prospect/actions/workflows/gradle.yml)
+
 # Prospect: Property Specification Library
 
 Type-safe and composable configuration properties for Kotlin.
@@ -15,6 +19,35 @@ Notable features include:
 * Rich defaults and fully customizable core
 * Substitution of environment variables and system properties
 * Support for override files
+
+## Artifacts
+
+**Using with Gradle:**
+
+```kotlin
+repositories {
+    maven { url = uri("https://packages.dxfeed.com/maven") }
+}
+
+dependencies {
+    implementation("com.dxfeed.prospect:prospect:0.0.1")
+}
+```
+
+**Using with Maven:**
+
+```xml
+<repository>
+    <id>dxfeed</id>
+    <url>https://packages.dxfeed.com/maven</url>
+</repository>
+
+<dependency>
+    <groupId>com.dxfeed.prospect</groupId>
+    <artifactId>prospect</artifactId>
+    <version>0.0.1</version>
+</dependency>
+```
 
 ## Prospect in Action
 
