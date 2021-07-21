@@ -75,11 +75,34 @@ val sourcesJar by tasks.registering(Jar::class) {
 
 fun Project.isSnapshotVersion() = "SNAPSHOT" in "${project.version}"
 
+// TODO: remove when there a snapshot repository
+tasks.withType<PublishToMavenRepository> {
+    doFirst {
+        if (project.isSnapshotVersion()) {
+            throw GradleException("Publishing snapshot versions is not supported")
+        }
+    }
+}
+
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
             artifact(sourcesJar.get())
+        }
+    }
+    repositories {
+        maven {
+            name = "prospect"
+            url = project.uri("https://dxfeed.jfrog.io/artifactory/prospect/")
+            val publishUsername = System.getenv("PROSPECT_PUBLISH_USERNAME")
+            val publishPassword = System.getenv("PROSPECT_PUBLISH_PASSWORD")
+            if (!publishUsername.isNullOrBlank() && !publishPassword.isNullOrBlank()) {
+                credentials {
+                    username = publishUsername
+                    password = publishPassword
+                }
+            }
         }
     }
 }
