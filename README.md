@@ -5,6 +5,10 @@
   file, You can obtain one at https://mozilla.org/MPL/2.0/.
 -->
 
+[![Made by dxFeed](https://img.shields.io/badge/Made_by-dxFeed-e6411d)](https://www.dxfeed.com/)
+[![License: MPL-2.0](https://img.shields.io/badge/License-MPL--2.0-blue)](./LICENSE)
+[![Gradle build](https://github.com/dxFeed/prospect/actions/workflows/gradle.yml/badge.svg)](https://github.com/alllex/parsus/actions/workflows/gradle.yml)
+
 # Prospect: Property Specification Library
 
 Type-safe and composable configuration properties for Kotlin.
