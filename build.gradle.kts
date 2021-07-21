@@ -92,15 +92,19 @@ publishing {
         }
     }
     repositories {
-        maven {
-            name = "prospect"
-            url = project.uri("https://dxfeed.jfrog.io/artifactory/prospect/")
-            val publishUsername = System.getenv("PROSPECT_PUBLISH_USERNAME")
-            val publishPassword = System.getenv("PROSPECT_PUBLISH_PASSWORD")
-            if (!publishUsername.isNullOrBlank() && !publishPassword.isNullOrBlank()) {
-                credentials {
-                    username = publishUsername
-                    password = publishPassword
+        val publishRepository = System.getenv("PROSPECT_PUBLISH_REPOSITORY")
+        if (!publishRepository.isNullOrBlank()) {
+            maven {
+                name = "prospect"
+                url = project.uri(publishRepository)
+
+                val publishUsername = System.getenv("PROSPECT_PUBLISH_USERNAME")
+                val publishPassword = System.getenv("PROSPECT_PUBLISH_PASSWORD")
+                if (!publishUsername.isNullOrBlank() && !publishPassword.isNullOrBlank()) {
+                    credentials {
+                        username = publishUsername
+                        password = publishPassword
+                    }
                 }
             }
         }
