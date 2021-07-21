@@ -25,19 +25,27 @@ Notable features include:
 **Using with Gradle:**
 
 ```kotlin
+repositories {
+    maven { url = uri("https://packages.dxfeed.com/maven") }
+}
+
 dependencies {
     implementation("com.dxfeed.prospect:prospect:0.0.1")
 }
 ```
 
 **Using with Maven:**
-### Using with Maven
 
 ```xml
+<repository>
+    <id>dxfeed</id>
+    <url>https://packages.dxfeed.com/maven</url>
+</repository>
+
 <dependency>
-  <groupId>com.dxfeed.prospect</groupId>
-  <artifactId>prospect</artifactId>
-  <version>0.0.1</version>
+    <groupId>com.dxfeed.prospect</groupId>
+    <artifactId>prospect</artifactId>
+    <version>0.0.1</version>
 </dependency>
 ```
 
